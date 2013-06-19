@@ -1,0 +1,20 @@
+
+<h1>Recommendations for "<%= @search_title %>"</h1>
+<ul>
+  <% @results.each do |result| %>
+  <li>
+    <% movie_title = result['Name'] %>
+    <%= link_to image_tag("#{@poster[result['Index']-1]['Poster']}", :size => '200x297' ), recommendation_path(movie_title) %>
+    <div class="movieRecommendations">
+      <%= result['Index'] %>) <%= result['Name'] %>
+    </div>
+    
+  </li>
+  <% end %>
+</ul>
+
+<button><%= link_to "Enter New Movie", recommendation_search_index_path, :class => "newMovie"%></button>
+
+<br>
+
+<%= User.last[:id] %>

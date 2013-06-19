@@ -1,0 +1,50 @@
+// Place all the styles related to the recommend_screen controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.submit_button {
+  margin-left: 190px;
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+  margin-top: 50px;
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 10px;
+}
+
+h1 {
+  font-family: helvetica;
+}
+
+.indexPoster {
+  height: 297px;
+  width: 200px;
+}
+
+.movieRecommendations {
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  width: 180px;
+  height: 25px;
+  text-align: center;
+  margin: 50px 300px;
+}
+
+.newMovie {
+  text-decoration: none;
+  font-size: 18px;
+}

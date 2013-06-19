@@ -1,6 +1,9 @@
 RailsMovieRec::Application.routes.draw do
   devise_for :users
   resources :user_screen
+  resources :recommendations
+  resources :recommendation_search
+
 
   root to: "home#index"
 

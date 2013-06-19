@@ -1,0 +1,17 @@
+<h2>Individual Movie Info</h2>
+
+<h3><%= @movie_title['Title'] %></h3>
+<br>
+<img class="individualPoster" src="<%= @movie_title['Poster'] %>" />
+<br>
+<%= @movie_title['Year'] %><br>
+<%= @movie_title['Rated'] %><br>
+<%= @movie_title['Runtime'] %><br>
+<%= @movie_title['Genre'] %><br>
+<%= @movie_title['Director'] %><br>
+<%= @movie_title['Writer'] %><br>
+<%= @movie_title['Actors'] %><br>
+<%= @movie_title['Plot'] %>
+
+<br>
+<button><%= link_to "Leave Movie", recommendations_path %></button>

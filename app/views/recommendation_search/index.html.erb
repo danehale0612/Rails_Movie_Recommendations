@@ -1,0 +1,10 @@
+<h1>Recommend Screen</h1>
+
+<h3 class="recScreenFormHeader">Type in a Movie Title for Recommendations:</h3>
+
+<%= form_for @recommendation do |form| %>
+  <%= form.text_field :title, :class => "recTextField", :placeholder => "Type movie title here..." %><br>
+  <%= form.submit "Get Recommendations", :class => 'submit_button' %>
+  <% @clear_recommend_search %>
+<% end %>
+
