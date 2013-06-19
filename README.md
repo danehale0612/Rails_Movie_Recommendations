@@ -11,14 +11,21 @@ Features:
 4. Movies that are listed in the Watch List or Already Watched List will not be recommended to the user again.
 
 ##ToDo/Project State:
--Planning phase is complete.
+-Devise, user login
+-recommendation search bar
+-recommendation results page
+-individual movie info from recommendation results (with back button from movie info to results)
+
 
 ##ToDo:
--Build app
+-build "Watch List" screen with individual movie info screen
+-build "Already Watched List" screen with individule movie info screeen
+-write tests as I build those sections of app
 
 
 ##Changelog:
 2013-06-11: Started Project 2013-06-11: Idea is complete, wireframming is complete
+2013-06-19: Added movie recommendation search bar, results page, and individule movie info with a back button
 
 ##Usage:
 This is a standard rails app. To run the tests, use 'rake'. To run the app, use 'railes s'.
