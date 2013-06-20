@@ -3,6 +3,8 @@ RailsMovieRec::Application.routes.draw do
   resources :user_screen
   resources :recommendations
   resources :recommendation_search
+  resources :watch_list
+
 
 
   root to: "home#index"

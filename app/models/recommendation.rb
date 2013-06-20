@@ -7,18 +7,18 @@ class Recommendation < ActiveRecord::Base
     search_title
   end
 
-  def self.grab_info
+  def self.grab_info(current_user)
     search_title = save_movie_search
     response = Faraday.get "http://www.tastekid.com/ask/ws?q=movie:#{search_title}//movies&format=JSON&f=see_the3022&k=nzfkmgm3nwvm"
     results = JSON.parse(response.body)['Similar']['Results']
-    scrubbed_results(results)
+    scrubbed_results(results, current_user)
   end
 
-  def self.scrubbed_results(results)
+  def self.scrubbed_results(results, current_user)
     scrub_results = []
     results.length.times do |i|
       lowercase_results = results[i]['Name'].downcase
-      matched_movie = UserMovie.where(title: lowercase_results, user_id: @userID).first
+      matched_movie = UserMovie.where(title: lowercase_results, user_id: current_user).first
       scrub_results << results[i] if matched_movie.nil?
     end 
     get_top_five_movies(scrub_results)

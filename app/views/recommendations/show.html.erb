@@ -1,17 +1,22 @@
-<h2>Individual Movie Info</h2>
+<h1>Individual Movie Info</h1>
 
-<h3><%= @movie_title['Title'] %></h3>
+<h2><%= @movie_title['Title'] %></h2>
+<% movieTitle = @movie_title['Title']%>
+<% movieTitle = movieTitle.downcase! %>
 <br>
 <img class="individualPoster" src="<%= @movie_title['Poster'] %>" />
 <br>
-<%= @movie_title['Year'] %><br>
-<%= @movie_title['Rated'] %><br>
-<%= @movie_title['Runtime'] %><br>
-<%= @movie_title['Genre'] %><br>
-<%= @movie_title['Director'] %><br>
-<%= @movie_title['Writer'] %><br>
-<%= @movie_title['Actors'] %><br>
-<%= @movie_title['Plot'] %>
+<div class="movie_info_label">Year: </div><%= @movie_title['Year'] %><br>
+<div class="movie_info_label">Rated: </div><%= @movie_title['Rated'] %><br>
+<div class="movie_info_label">Runtime: </div><%= @movie_title['Runtime'] %><br>
+<div class="movie_info_label">Genre: </div><%= @movie_title['Genre'] %><br>
+<div class="movie_info_label">Director: </div><%= @movie_title['Director'] %><br>
+<div class="movie_info_label">Writer: </div><%= @movie_title['Writer'] %><br>
+<div class="movie_info_label">Actors: </div><%= @movie_title['Actors'] %><br>
+<div class="movie_info_label">Plot: </div><%= @movie_title['Plot'] %>
 
 <br>
-<button><%= link_to "Leave Movie", recommendations_path %></button>
+
+<button class="optionButton"><%= link_to "Leave Movie", recommendations_path %></button>
+<button class="optionButton"><%= link_to "Send to Watch List", new_user_screen_path(:id =>movieTitle, :status => "watchlist") %></button>
+<button class="optionButton"><%= link_to "Send to Already Watched List", new_user_screen_path(:id =>movieTitle, :status => "already watched list") %></button>

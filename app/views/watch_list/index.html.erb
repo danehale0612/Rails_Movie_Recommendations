@@ -1,0 +1,15 @@
+<h1>Watch List</h1>
+<ul>
+  <% @poster.each do |result| %>
+    <li>
+    <% movie_title = result['Title'] %>
+    <%= link_to image_tag("#{result['Poster']}", :size => '200x297' ), recommendation_path(movie_title) %>
+      <div class="movieRecommendations">
+        <%= result['Title'] %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<button class="optionButton"><%= link_to "Go To User Screen", user_screen_index_path %></button>
+

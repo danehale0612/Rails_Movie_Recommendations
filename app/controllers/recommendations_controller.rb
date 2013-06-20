@@ -1,7 +1,7 @@
 class RecommendationsController < ApplicationController
 
   def index
-    @results = Recommendation.grab_info
+    @results = Recommendation.grab_info(current_user)
     @user = current_user
     @poster = Recommendation.get_poster(@results)
     @movie = Recommendation.last
@@ -16,5 +16,6 @@ class RecommendationsController < ApplicationController
   def show
     @movie_title = Recommendation.get_movie_info(params[:id])
   end
+  
 
 end

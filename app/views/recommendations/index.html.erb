@@ -13,8 +13,7 @@
   <% end %>
 </ul>
 
-<button><%= link_to "Enter New Movie", recommendation_search_index_path, :class => "newMovie"%></button>
+<button class="optionButton"><%= link_to "Enter New Movie", recommendation_search_index_path %></button>
 
-<br>
+<button class="optionButton"><%= link_to "Go To User Screen", user_screen_index_path %></button>
 
-<%= User.last[:id] %>
