@@ -31,8 +31,8 @@ Features:
 This is a standard rails app. To run the tests, use 'rake'. To run the app, use 'railes s'.
 
 ##API's
-Tastekid.com - To get the movie recommendations
-OMDBapi.com - To get information on the movies
+1. Tastekid.com - To get the movie recommendations<br>
+2. OMDBapi.com - To get information on the movies
 
 ##Author:
 Dane Hale
