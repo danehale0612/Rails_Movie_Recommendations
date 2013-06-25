@@ -1,7 +1,7 @@
-class WatchListController < ApplicationController
+class AlreadyWatchedListController < ApplicationController
 
   def index
-    @watchlist = get_watch_list
+    @watchlist = get_already_watched_list
     @poster = get_poster(@watchlist)
   end
 
@@ -11,23 +11,23 @@ class WatchListController < ApplicationController
 
   def update
     @movie = UserMovie.where(title: params[:id], user_id: current_user).first
-    @movie.update_attributes(status: "already watched list")
+    @movie.update_attributes(status: "watchlist")
     movie_title = params[:id]
-    flash[:notice] = "#{movie_title} has been added to already watched list"
-    redirect_to watch_list_index_path
+    flash[:notice] = "#{movie_title} has been added to watch list"
+    redirect_to already_watched_list_index_path
   end
 
   def destroy
     @movie = UserMovie.where(title: params[:id], user_id: current_user).first
     @movie.destroy
     movie_title = params[:id]
-    flash[:notice] = "#{movie_title} has been deleted from watch list"
-    redirect_to watch_list_index_path
+    flash[:notice] = "#{movie_title} has been deleted from already watched list"
+    redirect_to already_watched_list_index_path
   end
 
-  def get_watch_list
+  def get_already_watched_list
     title_list = []
-    watchList = UserMovie.where(status: "watchlist", user_id: current_user.id).all
+    watchList = UserMovie.where(status: "already watched list", user_id: current_user.id).all
     watchList.each do |movie|
       title_list << movie.title
     end
@@ -46,8 +46,8 @@ class WatchListController < ApplicationController
 
   def get_movie_info(movie_title)
     response = Faraday.get "http://www.omdbapi.com/?i=&t=#{movie_title}&plot=full&tomatoes=true"
-      movie_info = JSON.parse(response.body)
-      movie_info
+    movie_info = JSON.parse(response.body)
+    movie_info
   end
 
 end

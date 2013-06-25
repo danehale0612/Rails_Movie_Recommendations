@@ -1,13 +1,13 @@
-<h1>Watch List</h1>
+<h1>Already Watched List</h1>
 <button class="optionButton"><%= link_to "Go To User Screen", user_screen_index_path %></button>
 <ul>
   <% @poster.each do |result| %>
     <li>
       <div class="movieRecommendations">
-        <%= link_to result['Title'], watch_list_path(result['Title']) %>
+        <%= link_to result['Title'], already_watched_list_path(result['Title']) %>
       </div>
       <% movie_title = result['Title'] %>
-      <%= link_to image_tag("#{result['Poster']}", :size => '200x297', :class => "indexPoster" ), watch_list_path(movie_title) %>
+      <%= link_to image_tag("#{result['Poster']}", :size => '200x297', :class => "indexPoster" ), already_watched_list_path(movie_title) %>
     </li>
   <% end %>
 </ul>

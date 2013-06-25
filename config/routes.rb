@@ -4,6 +4,7 @@ RailsMovieRec::Application.routes.draw do
   resources :recommendations
   resources :recommendation_search
   resources :watch_list
+  resources :already_watched_list
 
 
 

@@ -1,9 +1,9 @@
-class WatchList < ActiveRecord::Base
+class AlreadyWatchedList < ActiveRecord::Base
   # attr_accessible :title
 
   def self.get_watch_list
     title_list = []
-    watchList = UserMovie.where(status: "watchlist", user_id: current_user.id).all
+    watchList = UserMovie.where(status: "already_watched_list", user_id: current_user.id).all
     watchList.each do |movie|
       title_list << movie.title
     end

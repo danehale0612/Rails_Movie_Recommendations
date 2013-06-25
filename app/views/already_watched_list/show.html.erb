@@ -1,4 +1,4 @@
-<h1>Individual Movie Info</h1>
+<h1>Already Watched List - Individual Movie Info</h1>
 
 <h2><%= @movie_title['Title'] %></h2>
 <% movieTitle = @movie_title['Title']%>
@@ -17,6 +17,6 @@
 
 <br>
 
-<button class="optionButton"><%= link_to "Leave Movie", recommendations_path %></button>
-<button class="optionButton"><%= link_to "Send to Watch List", new_user_screen_path(:id =>movieTitle, :status => "watchlist", :class => "sendToWatchList") %></button>
-<button class="optionButton"><%= link_to "Send to Already Watched List", new_user_screen_path(:id =>movieTitle, :status => "already watched list") %></button>
+<button class="optionButton"><%= link_to "Leave Movie", already_watched_list_index_path %></button>
+<button class="optionButton"><%= link_to "Send to Watch List", already_watched_list_path(movieTitle), :method => :put %></button>
+<button class="optionButton"><%= link_to "Delete Movie From Already Watched List", already_watched_list_path(movieTitle), :method => :delete %></button>

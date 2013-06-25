@@ -35,7 +35,7 @@ class Recommendation < ActiveRecord::Base
   def self.get_poster(results)
     movie_results = []
     results.each do |result|
-      response = Faraday.get "http://www.omdbapi.com/?i=&t=#{result['Name']}"
+      response = Faraday.get "http://www.omdbapi.com/", { :t => result['Name'] }
       movie_info = JSON.parse(response.body)
       movie_results << movie_info
     end
@@ -43,7 +43,7 @@ class Recommendation < ActiveRecord::Base
   end
 
   def self.get_movie_info(movie_title)
-    response = Faraday.get "http://www.omdbapi.com/?i=&t=#{movie_title}&plot=full&tomatoes=true"
+    response = Faraday.get "http://www.omdbapi.com/", { :t => movie_title, :plot => "full", :tomatoes => "true" }
       movie_info = JSON.parse(response.body)
       movie_info
   end
