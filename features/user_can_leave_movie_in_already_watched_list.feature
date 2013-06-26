@@ -10,6 +10,6 @@ And they can leave that movie to go back to their already watched list
     Then I go into "Predator" to "Send to Already Watched List"
     Then I go to "Already Watched List"
     And I click "Predator"
-    And I click link "Leave Movie"
+    And I press "Leave Movie"
     And I should see "Already Watched List"
     And I should see "Predator"

@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-form {
+.new_recommendation {
   width: 520px;
   margin: 0 auto;
 }
 
 .recScreenFormHeader {
+  margin-top: 50px;
   text-align: center;
 }
 
 .recTextField {
   width: 510px;
   height: 30px;
+}
+
+.hideField {
+  display: none;
 }

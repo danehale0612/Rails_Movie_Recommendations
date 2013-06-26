@@ -10,10 +10,9 @@ And they can delete that movie from their watch list
     Then I go into "Predator" to "Send to Watch List"
     Then I go to "Watch List"
     And I click "Predator"
-    And I click link "Delete Movie From Watch List"
+    And I press "Delete Movie From Watch List"
     And I should see "Watch List"
-    And I should see "predator has been deleted from watch list"
-    And I should not see "Predator"
-    Then I click link "Go To User Screen"
+    And I should see "'Predator' has been deleted from 'Watch List'"
+    Then I press "Go To User Screen"
     Then I go to "Terminator" recommendations
     And I should see "1) Predator"

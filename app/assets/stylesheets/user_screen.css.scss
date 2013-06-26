@@ -2,8 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.logo_pic {
+#logo {
+  margin: 0px auto;
+  margin-top: 60px;
   width: 200px;
   height: 111px;
-  float: right;
+}
+
+#logoUserScreen {
+  margin: 0px auto;
+  width: 200px;
+  height: 111px;
+}
+
+.userScreenOptions {
+  margin-top: 150px;
+  text-align: center;
 }

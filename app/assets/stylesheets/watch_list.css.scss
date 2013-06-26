@@ -2,3 +2,106 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.movieDisplay {
+  width: 720px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+
+.individualPoster {
+  max-width: 300px;
+  max-height: 445px;
+  display: block;
+  float: left;
+  margin-right: 20px;
+  box-shadow: 8px 8px 25px #000;
+}
+
+.movieInfo {
+  width: 400px;
+
+  display: block;
+  overflow: hidden;
+  font-family: helvetica;
+  color: #333;
+  font-size: 14px;
+}
+
+.movieInfoTitle {
+  font-size: 22px;
+  float: left;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.movieInfoYear {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.ratingRuntimeGenreRelease {
+  overflow: hidden;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.rated {
+  display: block;
+  float: left;
+  padding: 0px 4px;
+  border: 1px solid #000;
+  font-family: serif;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+.runtime {
+  display: block;
+  float: left;
+  margin-right: 12px;  
+}
+
+.length {
+  display: block;
+  float: left;
+  margin-right: 12px;
+}
+
+.genre {
+  display: block;
+  float: left;
+  margin-right: 12px;
+}
+
+.plot {
+  margin-bottom: 15px;
+  display: block;
+}
+
+.crew {
+  display: block
+}
+
+.button_to {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.buttons {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.optionButton {
+  display: inline-block;
+  float: left;
+  font-size: 20px;
+  margin: 0px 15px;
+}
+
+#flash_notice {
+  font-size: 20px;
+  margin-top: 20px;
+}

@@ -1,14 +1,16 @@
+<h1>Welcome to Your User Screen</h1>
 
 <div id="logo">
   <%= image_tag('SeeTheseMoviesLogo.jpg', :class => "logo_pic") %>
 </div>
-<h1>Welcome to Your User Screen</h1>
 
-<button><%= link_to "Watch List", watch_list_index_path %></button>
+<div class="userScreenOptions">
 
-<br>
+  <%= button_to "Recommend Movies", recommendation_search_index_path, :method => :get, :class => "optionButton" %>
 
-<button><%= link_to "Already Watched List", already_watched_list_index_path %></button>
-<br>
+  <%= button_to "Watch List", watch_list_index_path, :method => :get, :class => "optionButton" %>
 
-<button><%= link_to "Recommend Movies", recommendation_search_index_path %></button>
+  <%= button_to "Already Watched List", already_watched_list_index_path, :method => :get, :class => "optionButton" %>
+
+
+</div>

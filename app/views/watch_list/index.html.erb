@@ -1,5 +1,9 @@
 <h1>Watch List</h1>
-<button class="optionButton"><%= link_to "Go To User Screen", user_screen_index_path %></button>
+
+<div class="listIndexOptions">
+  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "optionButton" %>
+</div>
+
 <ul>
   <% @poster.each do |result| %>
     <li>

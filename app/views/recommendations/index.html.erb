@@ -12,7 +12,8 @@
   <% end %>
 </ul>
 
-<button class="optionButton"><%= link_to "Enter New Movie", recommendation_search_index_path %></button>
+<div class="userScreenOptions">
+  <%= button_to "Enter New Movie", recommendation_search_index_path, :method => :get, :class => "optionButton" %>
 
-<button class="optionButton"><%= link_to "Go To User Screen", user_screen_index_path %></button>
-
+  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "optionButton" %>
+</div>

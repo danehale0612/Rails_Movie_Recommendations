@@ -43,19 +43,19 @@ When(/^I sign in as "(.*?)" with "(.*?)"$/) do |email, password|
 end
 
 Then(/^I go to "(.*?)" recommendations$/) do |title|
-  first("a", text: "Recommend Movies").click
+  click_link_or_button "Recommend Movies"
   fill_in "Search Recommendation", with: title
   click_link_or_button "Get Recommendations"
 end
 
 Then(/^I go to "(.*?)"$/) do |list|
-  first("a", text: "Go To User Screen").click
-  first("a", text: list).click
+  click_link_or_button "Go To User Screen"
+  click_link_or_button list
 end
 
 Then(/^I go into "(.*?)" to "(.*?)"$/) do |title, action|
   first("a", text: "1) Predator").click
-  first("a", text: action).click
+  click_link_or_button action
 end
 
 

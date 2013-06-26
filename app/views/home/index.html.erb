@@ -1,1 +1,13 @@
-<h1>Welcome to See These Movies!</h1>
+<h1 id="homeHeader">Welcome To</h1>
+<div id="logo">
+  <%= image_tag('SeeTheseMoviesLogo.jpg', :class => "logo_pic") %>
+</div>
+
+
+<div class="userScreenOptions">
+
+<%= button_to "Sign up", new_user_registration_path, :class => "optionButton" %>
+
+<%= button_to "Sign in", new_user_session_path, :class => "optionButton" %>
+
+</div>

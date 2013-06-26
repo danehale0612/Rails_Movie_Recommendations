@@ -1,13 +1,20 @@
-<h1>Recommend Screen</h1>
+<div id="logoUserScreen">
+  <%= image_tag('SeeTheseMoviesLogo.jpg') %>
+</div>
 
 <h3 class="recScreenFormHeader">Type in a Movie Title for Recommendations:</h3>
 
 <%= form_for @recommendation do |form| %>
-  <%= form.label :title, "Search Recommendation" %>
+  <%= form.label :title, "Search Recommendation", :class => "hideField" %>
   <%= form.text_field :title, :class => "recTextField", :placeholder => "Type movie title here..." %><br>
   <%= form.submit "Get Recommendations", :class => 'submit_button' %>
   <% @clear_recommend_search %>
 <% end %>
 
-<button class="optionButton"><%= link_to "Go To User Screen", user_screen_index_path %></button>
+
+<div class="listIndexOptions">
+
+  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "optionButton" %>
+
+</div>
 

@@ -12,7 +12,7 @@ class UserScreenController < ApplicationController
     # UserMovie.destroy_all
     movie_title = params[:id]
     status = params[:status]
-    flash[:notice] = "#{movie_title} has been added to #{status}"
+    flash[:notice] = "'#{movie_title.titleize}' has been added to '#{status.titleize}'"
     redirect_to recommendations_path
   end
 

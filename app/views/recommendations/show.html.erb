@@ -1,22 +1,36 @@
-<h1>Individual Movie Info</h1>
 
-<h2><%= @movie_title['Title'] %></h2>
 <% movieTitle = @movie_title['Title']%>
 <% movieTitle = movieTitle.downcase! %>
-<br>
-<img class="individualPoster" src="<%= @movie_title['Poster'] %>" />
-<br>
-<div class="movie_info_label">Year: </div><%= @movie_title['Year'] %><br>
-<div class="movie_info_label">Rated: </div><%= @movie_title['Rated'] %><br>
-<div class="movie_info_label">Runtime: </div><%= @movie_title['Runtime'] %><br>
-<div class="movie_info_label">Genre: </div><%= @movie_title['Genre'] %><br>
-<div class="movie_info_label">Director: </div><%= @movie_title['Director'] %><br>
-<div class="movie_info_label">Writer: </div><%= @movie_title['Writer'] %><br>
-<div class="movie_info_label">Actors: </div><%= @movie_title['Actors'] %><br>
-<div class="movie_info_label">Plot: </div><%= @movie_title['Plot'] %>
+<div class="movieDisplay">
+  <img class="individualPoster" src="<%= @movie_title['Poster'] %>" />
+  <div class="movieInfo">
+    <div class="movieInfoYear">
+      <div class="movieInfoTitle"><%= @movie_title['Title'] %></div>
+      (<%= @movie_title['Year'] %>)
+    </div>
+
+    <div class="ratingRuntimeGenreRelease">
+      <div class="rated"><%= @movie_title['Rated'] %></div>
+      <div class="runtime"><%= @movie_title['Runtime'] %></div>
+      <div class="genre"><%= @movie_title['Genre'] %></div>
+      <div class="release"><%= @movie_title['Released'] %></div>
+    </div>
+    <div class="plot"><%= @movie_title['Plot'] %></div>
+    <div class="crew"><strong>Director: </strong><%= @movie_title['Director'] %></div>
+    <div class="crew"><strong>Writer: </strong><%= @movie_title['Writer'] %></div>
+    <div class="crew"><strong>Stars: </strong><%= @movie_title['Actors'] %></div>
+
+  </div>
+</div>
 
 <br>
 
-<button class="optionButton"><%= link_to "Leave Movie", recommendations_path %></button>
-<button class="optionButton"><%= link_to "Send to Watch List", new_user_screen_path(:id =>movieTitle, :status => "watchlist", :class => "sendToWatchList") %></button>
-<button class="optionButton"><%= link_to "Send to Already Watched List", new_user_screen_path(:id =>movieTitle, :status => "already watched list") %></button>
+<div class="buttons">
+
+  <%= button_to "Leave Movie", recommendations_path, :method => :get, :class => "optionButton" %>
+
+  <%= button_to "Send to Watch List", new_user_screen_path(:id =>movieTitle, :status => "watchlist", :class => "sendToWatchList"), :method => :get, :class => "optionButton" %>
+
+  <%= button_to "Send to Already Watched List", new_user_screen_path(:id =>movieTitle, :status => "already watched list"), :method => :get, :class => "optionButton" %>
+
+</div>

@@ -6,8 +6,8 @@ Feature: Users can select a movie from recommendation list and send that movie t
     And I sign in as "bob@example.com" with "password1"
     Then I go to "Terminator" recommendations
     Then I click "1) Predator"
-    Then I click link "Send to Already Watched List"
-    And I should see "predator has been added to already watched list"
+    Then I press "Send to Already Watched List"
+    And I should see "'Predator' has been added to 'Already Watched List'"
     And I should not see "1) Predator"
     Then I go to "Already Watched List"
     And I should see "Predator"

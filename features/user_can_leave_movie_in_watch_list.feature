@@ -10,6 +10,6 @@ And they can leave that movie to go back to their watch list
     Then I go into "Predator" to "Send to Watch List"
     Then I go to "Watch List"
     And I click "Predator"
-    And I click link "Leave Movie"
+    And I press "Leave Movie"
     And I should see "Watch List"
     And I should see "Predator"

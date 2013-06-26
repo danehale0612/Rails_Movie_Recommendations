@@ -13,7 +13,7 @@ class AlreadyWatchedListController < ApplicationController
     @movie = UserMovie.where(title: params[:id], user_id: current_user).first
     @movie.update_attributes(status: "watchlist")
     movie_title = params[:id]
-    flash[:notice] = "#{movie_title} has been added to watch list"
+    flash[:notice] = "'#{movie_title.titleize}' has been added to 'Watch List'"
     redirect_to already_watched_list_index_path
   end
 
@@ -21,7 +21,7 @@ class AlreadyWatchedListController < ApplicationController
     @movie = UserMovie.where(title: params[:id], user_id: current_user).first
     @movie.destroy
     movie_title = params[:id]
-    flash[:notice] = "#{movie_title} has been deleted from already watched list"
+    flash[:notice] = "'#{movie_title.titleize}' has been deleted from 'Already Watched List'"
     redirect_to already_watched_list_index_path
   end
 
