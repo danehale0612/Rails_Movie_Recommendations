@@ -1,3 +1,6 @@
+<div id="logoUserScreen">
+  <%= image_tag('SeeTheseMoviesLogo.png') %>
+</div>
 
 <h1>Recommendations for "<%= @search_title %>"</h1>
 <ul>
@@ -13,7 +16,7 @@
 </ul>
 
 <div class="userScreenOptions">
-  <%= button_to "Enter New Movie", recommendation_search_index_path, :method => :get, :class => "optionButton" %>
+  <%= button_to "Enter New Movie", recommendation_search_index_path, :method => :get, :class => "btn optionButton" %>
 
-  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "optionButton" %>
+  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "btn optionButton" %>
 </div>

@@ -1,4 +1,5 @@
 RailsMovieRec::Application.routes.draw do
+ 
   devise_for :users
   resources :user_screen
   resources :recommendations

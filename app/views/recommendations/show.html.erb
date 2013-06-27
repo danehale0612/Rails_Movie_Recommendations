@@ -27,10 +27,10 @@
 
 <div class="buttons">
 
-  <%= button_to "Leave Movie", recommendations_path, :method => :get, :class => "optionButton" %>
+  <%= button_to "Leave Movie", recommendations_path, :method => :get, :class => "btn optionButton" %>
 
-  <%= button_to "Send to Watch List", new_user_screen_path(:id =>movieTitle, :status => "watchlist", :class => "sendToWatchList"), :method => :get, :class => "optionButton" %>
+  <%= button_to "Send to Watch List", new_user_screen_path(:id =>movieTitle, :status => "watchlist", :class => "sendToWatchList"), :method => :get, :class => "btn optionButton" %>
 
-  <%= button_to "Send to Already Watched List", new_user_screen_path(:id =>movieTitle, :status => "already watched list"), :method => :get, :class => "optionButton" %>
+  <%= button_to "Send to Already Watched List", new_user_screen_path(:id =>movieTitle, :status => "already watched list"), :method => :get, :class => "btn optionButton" %>
 
 </div>
