@@ -6,7 +6,7 @@ Feature: Users can select a movie from recommendation list and send that movie t
     And I sign in as "bob@example.com" with "password1"
     Then I go to "Terminator" recommendations
     Then I click "1) Predator"
-    Then I press "Send to Watch List"
+    Then I click "Send to Watch List"
     And I should see "'Predator' has been added to 'Watchlist'"
     And I should not see "1) Predator"
     Then I go to "Watch List"

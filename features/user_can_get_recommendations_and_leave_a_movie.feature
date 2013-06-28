@@ -14,7 +14,7 @@ Feature: Users can enter a movie
     Then I should see "1) Predator"
     And I click "1) Predator"
     And I should see "Director: John McTiernan"
-    Then I press "Leave Movie"
+    Then I click "Leave Movie"
     And I should see "Recommendations for "Terminator"
     And I should see "1) Predator"
     Then I should not see "'Predator' has been added to 'Watchlist'"
