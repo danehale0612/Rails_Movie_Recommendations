@@ -5,9 +5,7 @@
 
 <h1>Watch List</h1>
 
-<div class="listIndexOptions">
-  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "btn optionButton" %>
-</div>
+
 
 <ul>
   <% @poster.each do |result| %>
@@ -20,6 +18,10 @@
     </li>
   <% end %>
 </ul>
+
+<div class="listIndexOptions">
+  <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "btn optionButton" %>
+</div>
 
 
 
