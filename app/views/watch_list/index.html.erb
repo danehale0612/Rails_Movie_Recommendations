@@ -14,7 +14,7 @@
         <%= link_to result['Title'], watch_list_path(result['Title']) %>
       </div>
       <% movie_title = result['Title'] %>
-      <%= link_to "<img src='#{result['Poster']}' class='indexPoster' />".html_safe, watch_list_path(movie_title) %>
+      <%= link_to image_tag("#{result['Poster']}", :size => '200x297', :class => "indexPoster" ), watch_list_path(movie_title) %>
     </li>
   <% end %>
 </ul>
