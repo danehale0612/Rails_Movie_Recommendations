@@ -29,8 +29,8 @@ Features:
 2013-06-11: Started Project 2013-06-11: Idea is complete, wireframming is complete<br>
 2013-06-19: Added movie recommendation search bar, results page, and individule movie info with a back button<br>
 2013-06-25: Added Tests, styled app<br>
-2013-06-27: Pushed to Heroku
-2013-07-02: Posters will not display while running off Heroku server due to IMDB Poster database not allowing them to be displayed on other public sites (But will work locally)
+2013-06-27: Pushed to Heroku<br>
+2013-07-02: Posters will not display while running off Heroku server due to IMDB Poster database not allowing them to be displayed on other public sites (but will work locally)
 
 ##Usage:
 -This is a standard rails app. To run the tests, use 'rake'. To run the app, use 'railes s'.<br>
