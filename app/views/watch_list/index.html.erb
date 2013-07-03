@@ -11,10 +11,10 @@
   <% @poster.each do |result| %>
     <li>
       <div class="movieRecommendations">
-        <%= link_to result['Title'], watch_list_path(result['Title']) %>
+        <%= link_to result['title'], watch_list_path(result['title']) %>
       </div>
-      <% movie_title = result['Title'] %>
-      <%= link_to image_tag(image_path("#{result['Poster']}"), :size => '200x297', :class => "indexPoster" ), watch_list_path(movie_title) %>
+      <% movie_title = result['title'] %>
+      <%= link_to image_tag("#{result['posters']['detailed']}", :size => '200x297', :class => "indexPoster" ), watch_list_path(movie_title) %>
     </li>
   <% end %>
 </ul>
@@ -22,6 +22,7 @@
 <div class="listIndexOptions">
   <%= button_to "Go To User Screen", user_screen_index_path, :method => :get, :class => "btn optionButton" %>
 </div>
+
 
 
 
