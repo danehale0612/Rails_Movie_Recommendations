@@ -19,7 +19,7 @@ class WatchList < ActiveRecord::Base
       movie_info = JSON.parse(response.body)
       # binding.pry
       movie_info['movies'].each do |movie|
-        final_movies << movie if movie['title'].downcase == resultTitle.downcase
+        final_movies << movie && break if movie['title'].downcase == resultTitle.downcase
       end
     end
     final_movies
