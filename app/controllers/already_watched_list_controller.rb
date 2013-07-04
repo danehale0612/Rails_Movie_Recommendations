@@ -1,8 +1,8 @@
 class AlreadyWatchedListController < ApplicationController
 
   def index
-    @watchlist = AlreadyWatchedList.get_already_watched_list(current_user)
-    @poster = AlreadyWatchedList.get_poster(@watchlist)
+    @alreadywatchedlist = AlreadyWatchedList.get_already_watched_list(current_user)
+    @poster = AlreadyWatchedList.get_poster(@alreadywatchedlist)
   end
 
   def show
