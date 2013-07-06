@@ -18,6 +18,7 @@ class Recommendation < ActiveRecord::Base
     scrub_results = []
     results.length.times do |i|
       lowercase_results = results[i]['Name'].downcase
+      lowercase_results = lowercase_results.gsub(/-/, ' ')
       matched_movie = UserMovie.where(title: lowercase_results, user_id: current_user).first
       scrub_results << results[i] if matched_movie.nil?
     end 
@@ -37,9 +38,7 @@ class Recommendation < ActiveRecord::Base
     final_movies = Array.new
     i = 0
     results.each do |result|
-      puts result
       resultTitle = result['Name'].gsub(/-/, ' ')
-      puts resultTitle
       response = Faraday.get "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=av24wmrhssmy4cnhww8xstcd&q=#{resultTitle}&page_limit=5"
       movie_info = JSON.parse(response.body)
       # binding.pry
