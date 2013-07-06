@@ -34,12 +34,22 @@ class Recommendation < ActiveRecord::Base
 
   def self.get_poster(results)
     movie_results = []
+    final_movies = Array.new
+    i = 0
     results.each do |result|
-      response = Faraday.get "http://www.omdbapi.com/", { :t => result['Name'] }
+      puts result
+      resultTitle = result['Name'].gsub(/-/, ' ')
+      puts resultTitle
+      response = Faraday.get "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=av24wmrhssmy4cnhww8xstcd&q=#{resultTitle}&page_limit=5"
       movie_info = JSON.parse(response.body)
-      movie_results << movie_info
+      # binding.pry
+      movie_info['movies'].each do |movie|
+        final_movies << movie['posters']['detailed'] && break if movie['title'].downcase == resultTitle.downcase
+      end
+      final_movies << movie_info['movies'][0]['posters']['detailed'] if final_movies[i] == nil
+      i = i + 1
     end
-    movie_results
+    final_movies
   end
 
   def self.get_movie_info(movie_title)

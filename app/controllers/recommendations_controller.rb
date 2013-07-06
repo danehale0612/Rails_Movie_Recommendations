@@ -14,7 +14,7 @@ class RecommendationsController < ApplicationController
   end
 
   def show
-    @movie_title = Recommendation.get_movie_info(params[:id])
+    @movie_title = Recommendation.get_movie_info(params[:id].gsub(/-/, ' '))
   end
   
 

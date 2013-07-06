@@ -10,7 +10,7 @@
       <%= link_to "#{result['Index']}) #{result['Name']}", recommendation_path(result['Name']) %>
     </div>
     <% movie_title = result['Name'] %>
-    <%= link_to image_tag("#{@poster[result['Index']-1]['Poster']}", :size => '200x297', :class => "indexPoster", :id => "#{result['Name']}Poster" ), recommendation_path(movie_title) %>
+    <%= link_to image_tag("#{@poster[result['Index']-1]}", :size => '200x297', :class => "indexPoster", :id => "#{result['Name']}Poster" ), recommendation_path(movie_title) %>
   </li>
   <% end %>
 </ul>
