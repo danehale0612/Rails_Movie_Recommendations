@@ -32,7 +32,8 @@ Features:
 2013-06-19: Added movie recommendation search bar, results page, and individule movie info with a back button<br>
 2013-06-25: Added Tests, styled app<br>
 2013-06-27: Pushed to Heroku<br>
-2013-07-02: Posters will not display while running off Heroku server due to IMDB Poster database not allowing them to be displayed on other public sites (but will work locally)
+2013-07-02: Posters will not display while running off Heroku server due to IMDB Poster database not allowing them to be displayed on other public sites (but will work locally)<br>
+2013-07-06: Posters will now display on the index views of the application (added rottentomatoes.com api for this fix).
 
 ##Usage:
 -This is a standard rails app. To run the tests, use 'rake'. To run the app, use 'railes s'.<br>
@@ -40,7 +41,8 @@ Features:
 
 ##API's
 1. Tastekid.com - To get the movie recommendations<br>
-2. OMDBapi.com - To get information on the movies
+2. OMDBapi.com - To get information on the movies<br>
+3. Rottentomatoes.com - To show the posters of the movies
 
 ##Author:
 Dane Hale
