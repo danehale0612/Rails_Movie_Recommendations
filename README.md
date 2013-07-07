@@ -1,7 +1,7 @@
 Rails Movie Recommendations
 ===========================
 
-[![Build Status](https://travis-ci.org/danehale0612/Rails_Movie_Recommendations.png)](https://travis-ci.org/danehale0612/Rails_Movie_Recommendations)
+[![Build Status](https://travis-ci.org/danehale0612/Rails_Movie_Recommendations.png)](https://travis-ci.org/danehale0612/Rails_Movie_Recommendations) 
 
 ##Purpose:
 This is a Capstone project for NSS Cohort 2. I am making a movie recommendatin app in Rails to show my understanding of ruby, rails, TDD, sending data to a database, and retrieving it from a database.
