@@ -5,30 +5,38 @@ class WatchList < ActiveRecord::Base
     title_list = []
     watchList = UserMovie.where(status: "watchlist", user_id: current_user.id).all
     watchList.each do |movie|
-      title_list << movie.title
+      title_list << movie.title.gsub(/:/, '')
     end
     title_list
   end
 
   def self.get_poster(results)
     movie_results = []
-    final_movies = []
+    final_movies = Array.new
+    i = 0
     results.each do |result|
-      resultTitle = result
       response = Faraday.get "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=av24wmrhssmy4cnhww8xstcd&q=#{result}&page_limit=5"
       movie_info = JSON.parse(response.body)
       # binding.pry
       movie_info['movies'].each do |movie|
-        final_movies << movie && break if movie['title'].downcase == resultTitle.downcase
+        final_movies << movie && break if movie['title'].downcase == result
       end
+      final_movies << movie_info['movies'][0] if final_movies[i] == nil
+      i = i + 1
     end
     final_movies
   end
 
   def self.get_movie_info(movie_title)
-    response = Faraday.get "http://www.omdbapi.com/?i=&t=#{movie_title}&plot=full&tomatoes=true"
+    response = Faraday.get "http://www.omdbapi.com/?s=#{movie_title}"
       movie_info = JSON.parse(response.body)
-      movie_info
+
+    movie_imdbID = movie_info['Search'][0]['imdbID']
+
+    response = Faraday.get "http://www.omdbapi.com/?i=#{movie_imdbID}&plot=full&tomatoes=true"
+      movie_info = JSON.parse(response.body) 
+      
+    movie_info
   end
   
   

@@ -8,10 +8,10 @@
   <% @poster.each do |result| %>
     <li>
       <div class="movieRecommendations">
-        <%= link_to result['title'], already_watched_list_path(result['title']) %>
+        <%= link_to result['title'], watch_list_path(result['title'].gsub(/-/, '')) %>
       </div>
-      <% movie_title = result['title'] %>
-      <%= link_to image_tag("#{result['posters']['detailed']}", :size => '200x297', :class => "indexPoster" ),already_watched_list_path(movie_title) %>
+      <% movie_title = result['title'].gsub(/-/, '') %>
+      <%= link_to image_tag("#{result['posters']['detailed']}", :size => '200x297', :class => "indexPoster" ), already_watched_list_path(movie_title) %>
     </li>
   <% end %>
 </ul>

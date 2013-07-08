@@ -7,6 +7,7 @@ class WatchListController < ApplicationController
 
   def show
     @movie_title = WatchList.get_movie_info(params[:id])
+    puts params[:id]
   end
 
   def update
