@@ -23,7 +23,7 @@ Features:
 
 ##ToDo:
 
--add Rotten Tomatoes Score and image of tomatoe to individual movie profile<br>
+-add Rotten Tomatoes Score and image of tomatoe to individual movie profile<br> 
 
 
 
