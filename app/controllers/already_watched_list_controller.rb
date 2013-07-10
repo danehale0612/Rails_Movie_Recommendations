@@ -7,6 +7,7 @@ class AlreadyWatchedListController < ApplicationController
 
   def show
     @movie_title = AlreadyWatchedList.get_movie_info(params[:id])
+    @individualPoster = AlreadyWatchedList.get_individual_poster(params[:id])
   end
 
   def update

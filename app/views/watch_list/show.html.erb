@@ -2,7 +2,7 @@
 <% movieTitle = movieTitle.downcase! %>
 
 <div class="movieDisplay">
-  <img class="individualPoster" src="<%= @movie_title['Poster'] %>" />
+  <img class="individualPoster" src="<%= @individualPoster[0]['posters']['detailed'] %>" />
   <div class="movieInfo">
     <div class="movieInfoYear">
       <div class="movieInfoTitle"><%= @movie_title['Title'] %></div>

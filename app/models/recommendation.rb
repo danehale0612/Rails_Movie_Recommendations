@@ -38,9 +38,14 @@ class Recommendation < ActiveRecord::Base
     final_movies = Array.new
     i = 0
     results.each do |result|
-      resultTitle = result['Name'].gsub(/-/, ' ')
+      resultTitle = result['Name']
       response = Faraday.get "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=av24wmrhssmy4cnhww8xstcd&q=#{resultTitle}&page_limit=5"
       movie_info = JSON.parse(response.body)
+      if movie_info['total'] == 0
+        resultTitle = result['Name'].gsub(/-/, ' ')
+        response = Faraday.get "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=av24wmrhssmy4cnhww8xstcd&q=#{resultTitle}&page_limit=5"
+        movie_info = JSON.parse(response.body)
+      end
       # binding.pry
       movie_info['movies'].each do |movie|
         final_movies << movie['posters']['detailed'] && break if movie['title'].downcase == resultTitle.downcase
@@ -48,13 +53,20 @@ class Recommendation < ActiveRecord::Base
       final_movies << movie_info['movies'][0]['posters']['detailed'] if final_movies[i] == nil
       i = i + 1
     end
+    puts "here it is:"
+    puts final_movies
     final_movies
   end
 
   def self.get_movie_info(movie_title)
     response = Faraday.get "http://www.omdbapi.com/", { :t => movie_title, :plot => "full", :tomatoes => "true" }
+    movie_info = JSON.parse(response.body)
+    if !movie_info['Error'].nil?
+      puts "Hello to EVERYONE!!!"
+      response = Faraday.get "http://www.omdbapi.com/", { :t => movie_title.gsub(/-/, ' '), :plot => "full", :tomatoes => "true" }
       movie_info = JSON.parse(response.body)
-      movie_info
+    end
+    movie_info
   end
 
 end
